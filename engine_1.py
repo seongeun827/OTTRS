@@ -1,4 +1,6 @@
 import cx_Oracle
+import numpy as np
+import pandas as pd
 
 
 def doublebubleSort(li, li2):
@@ -8,7 +10,6 @@ def doublebubleSort(li, li2):
             if li[j] < li[j + 1]:
                 li[j], li[j + 1] = li[j + 1], li[j]
                 li2[j], li2[j + 1] = li2[j + 1], li2[j]
-
 
 def getMovieGenreList(userSeq):
     conn = cx_Oracle.connect("scott","tigertiger","orcl.cgnlgvycsnjd.us-east-2.rds.amazonaws.com:1521/orcl")
@@ -55,13 +56,12 @@ def getMovieGenreList(userSeq):
         movieResSeqList.append(movie[8])
         scResList.append(sc)
 
-    print(movieResSeqList)
-    print(scResList)
+    # print(movieResSeqList)
+    # print(scResList)
 
     doublebubleSort(scResList, movieResSeqList)
 
-    print(movieResSeqList)
-    print(scResList)
+    # print(scResList)
 
     return movieResSeqList
 
